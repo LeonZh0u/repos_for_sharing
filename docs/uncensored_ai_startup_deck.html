@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uncensored AI Startup Opportunities</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+<style>
+  :root {
+    --r-background-color: #0a0a0f;
+    --r-main-color: #e0e0e8;
+    --r-heading-color: #ffffff;
+    --r-link-color: #6ea8fe;
+  }
+  .reveal { font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif; }
+  .reveal h1, .reveal h2, .reveal h3 { font-weight: 700; letter-spacing: -0.02em; }
+  .reveal h1 { font-size: 2.2em; }
+  .reveal h2 { font-size: 1.6em; }
+  .reveal h3 { font-size: 1.2em; color: #a0a0b0; font-weight: 400; }
+  .reveal p, .reveal li { font-size: 0.7em; line-height: 1.5; }
+  .reveal ul { list-style: none; padding-left: 0; }
+  .reveal ul li::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 12px; vertical-align: middle; }
+
+  .accent { color: #6ea8fe; }
+  .green { color: #4ade80; }
+  .red { color: #f87171; }
+  .yellow { color: #fbbf24; }
+  .orange { color: #fb923c; }
+  .dim { color: #6b7280; }
+  .big-number { font-size: 3em; font-weight: 800; line-height: 1; }
+  .medium-number { font-size: 2em; font-weight: 700; line-height: 1; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 30px 0; }
+  .stat-box { text-align: center; padding: 20px; border: 1px solid #1e293b; border-radius: 12px; background: rgba(30,41,59,0.4); }
+  .stat-box .big-number { margin-bottom: 8px; }
+  .stat-box .label { font-size: 0.6em; color: #94a3b8; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px 0; }
+  .card { text-align: left; padding: 20px; border: 1px solid #1e293b; border-radius: 12px; background: rgba(30,41,59,0.3); }
+  .card h4 { margin: 0 0 8px 0; font-size: 0.8em; color: #fff; }
+  .card p { margin: 0; font-size: 0.55em; color: #94a3b8; line-height: 1.4; }
+
+  .score-bar { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+  .score-bar .bar-track { flex: 1; height: 8px; background: #1e293b; border-radius: 4px; overflow: hidden; }
+  .score-bar .bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s ease; }
+  .score-bar .score-label { font-size: 0.6em; min-width: 90px; color: #94a3b8; }
+  .score-bar .score-value { font-size: 0.7em; font-weight: 700; min-width: 30px; text-align: right; }
+
+  .ranking-row { display: flex; align-items: center; gap: 16px; padding: 14px 20px; margin: 6px 0; border-radius: 10px; background: rgba(30,41,59,0.3); border: 1px solid #1e293b; }
+  .ranking-row .rank { font-size: 1.4em; font-weight: 800; min-width: 36px; }
+  .ranking-row .info { flex: 1; text-align: left; }
+  .ranking-row .info .name { font-size: 0.75em; font-weight: 700; color: #fff; }
+  .ranking-row .info .desc { font-size: 0.5em; color: #94a3b8; }
+  .ranking-row .score-pill { font-size: 0.7em; font-weight: 700; padding: 4px 14px; border-radius: 20px; }
+
+  .evidence-item { display: flex; align-items: flex-start; gap: 12px; margin: 10px 0; text-align: left; }
+  .evidence-item .metric { font-size: 0.9em; font-weight: 700; min-width: 100px; text-align: right; }
+  .evidence-item .detail { font-size: 0.55em; color: #94a3b8; line-height: 1.4; }
+
+  .versus { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin: 20px 0; }
+  .versus .side { padding: 20px; border-radius: 12px; text-align: center; }
+  .versus .vs { font-size: 1.2em; font-weight: 800; color: #4b5563; }
+
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 0.5em; font-weight: 600; margin: 2px; }
+  .tag-green { background: rgba(74,222,128,0.15); color: #4ade80; }
+  .tag-red { background: rgba(248,113,113,0.15); color: #f87171; }
+  .tag-blue { background: rgba(110,168,254,0.15); color: #6ea8fe; }
+  .tag-yellow { background: rgba(251,191,36,0.15); color: #fbbf24; }
+
+  .timeline { position: relative; padding-left: 30px; text-align: left; }
+  .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: #1e293b; }
+  .timeline .step { position: relative; margin: 16px 0; }
+  .timeline .step::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #6ea8fe; border: 2px solid #0a0a0f; }
+  .timeline .step h4 { margin: 0; font-size: 0.7em; color: #fff; }
+  .timeline .step p { margin: 4px 0 0 0; font-size: 0.5em; color: #94a3b8; }
+
+  .quadrant { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 2px; margin: 20px auto; max-width: 600px; }
+  .quadrant .cell { padding: 16px; text-align: center; border-radius: 8px; }
+  .quadrant .cell h4 { margin: 0 0 6px 0; font-size: 0.65em; }
+  .quadrant .cell p { margin: 0; font-size: 0.5em; color: #94a3b8; }
+
+  table.macro { width: 100%; border-collapse: collapse; font-size: 0.5em; margin: 16px 0; }
+  table.macro th { text-align: left; padding: 10px 12px; border-bottom: 2px solid #334155; color: #6ea8fe; font-weight: 600; }
+  table.macro td { padding: 10px 12px; border-bottom: 1px solid #1e293b; color: #cbd5e1; vertical-align: top; }
+
+  .footnote { font-size: 0.4em; color: #4b5563; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); }
+
+  .reveal ul.clean li::before { display: none; }
+  .reveal ul.clean { padding-left: 20px; }
+  .reveal ul.clean li { list-style: disc; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════════════════════════════ TITLE ═══════════════════════════════════════════ -->
+<section>
+  <h1>Uncensored AI<br><span class="accent">Startup Opportunities</span></h1>
+  <h3>Market research, pain point analysis, and ranked startup concepts</h3>
+  <p style="margin-top: 40px; font-size: 0.55em; color: #4b5563;">
+    27 research agents &middot; 6 source channels &middot; 91 pain points &middot; 16 adversarial critiques
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════ RESEARCH METHODOLOGY ═══════════════════════════════════════════ -->
+<section>
+  <h2>Research Methodology</h2>
+  <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="card">
+      <h4>6 Source Channels</h4>
+      <p>Hacker News, Reddit, YC RFS, AI industry news, startup funding rounds, switching signals</p>
+    </div>
+    <div class="card">
+      <h4>7-Phase Pipeline</h4>
+      <p>Research &rarr; Extract &rarr; Cluster &rarr; Size &rarr; Ideate &rarr; Critique &rarr; Rank</p>
+    </div>
+    <div class="card">
+      <h4>Adversarial Validation</h4>
+      <p>Each concept stress-tested by a skeptical VC partner + a technical founder independently</p>
+    </div>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="big-number accent">91</div>
+      <div class="label">Raw Pain Points Extracted</div>
+    </div>
+    <div class="stat-box">
+      <div class="big-number accent">7</div>
+      <div class="label">Market Clusters Identified</div>
+    </div>
+    <div class="stat-box">
+      <div class="big-number accent">8</div>
+      <div class="label">Concepts Generated &amp; Critiqued</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ KEY FINDING ═══════════════════════════════════════════ -->
+<section>
+  <h2>The Core Insight</h2>
+  <p style="font-size: 1em; max-width: 700px; margin: 30px auto; line-height: 1.6;">
+    The "uncensored AI" market is <span class="green">real, large, and growing</span> &mdash;
+    but the strongest plays are in <span class="accent">infrastructure and vertical tooling</span>,
+    not consumer chat platforms.
+  </p>
+  <div class="stat-grid">
+    <div class="stat-box">
+      <div class="big-number green">$180B+</div>
+      <div class="label">Total Addressable Market</div>
+    </div>
+    <div class="stat-box">
+      <div class="big-number yellow">100x</div>
+      <div class="label">Cost Gap in Voice AI</div>
+    </div>
+    <div class="stat-box">
+      <div class="big-number accent">11,373</div>
+      <div class="label">Uncensored Models on HuggingFace</div>
+    </div>
+  </div>
+  <p style="font-size: 0.6em; color: #6b7280; margin-top: 20px;">
+    "Unrestricted" works as a <em>feature</em> of a broader value prop &mdash; not as the entire brand.
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════ MARKET CLUSTERS ═══════════════════════════════════════════ -->
+<section>
+  <h2>7 Validated Market Clusters</h2>
+  <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 20px;">
+    <div class="ranking-row">
+      <div class="rank accent">1</div>
+      <div class="info"><div class="name">Unrestricted Text / Chat Platforms</div><div class="desc">Creative writing, roleplay, medical, security &mdash; mass migration from over-censored models</div></div>
+      <div class="score-pill" style="background: rgba(74,222,128,0.15); color: #4ade80;">$180-250B TAM</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank accent">2</div>
+      <div class="info"><div class="name">Enterprise AI &amp; Data Sovereignty</div><div class="desc">Self-hosted inference, zero retention, unrestricted for regulated industries</div></div>
+      <div class="score-pill" style="background: rgba(74,222,128,0.15); color: #4ade80;">$120-180B TAM</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank accent">3</div>
+      <div class="info"><div class="name">Agent-Native Software Infrastructure</div><div class="desc">Rebuilding every software category for AI agents as first-class citizens</div></div>
+      <div class="score-pill" style="background: rgba(110,168,254,0.15); color: #6ea8fe;">$200-350B TAM</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank accent">4</div>
+      <div class="info"><div class="name">Unrestricted Voice AI &amp; Open-Source TTS</div><div class="desc">100x cost gap vs ElevenLabs, open-source quality crossing threshold</div></div>
+      <div class="score-pill" style="background: rgba(251,191,36,0.15); color: #fbbf24;">$45-65B TAM</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank accent">5</div>
+      <div class="info"><div class="name">Unrestricted Image Generation</div><div class="desc">CivitAI 7.5M visits, Stable Diffusion 164K stars, ComfyUI 117K stars</div></div>
+      <div class="score-pill" style="background: rgba(251,191,36,0.15); color: #fbbf24;">$35-50B TAM</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank accent">6</div>
+      <div class="info"><div class="name">Scientific Discovery &amp; Personalized Medicine</div><div class="desc">Closed-loop AI experimentation blocked by content restrictions</div></div>
+      <div class="score-pill" style="background: rgba(251,191,36,0.15); color: #fbbf24;">$80-120B TAM</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank accent">7</div>
+      <div class="info"><div class="name">Privacy-First AI (Crypto/VPN Model)</div><div class="desc">Venice AI, FreedomGPT &mdash; privacy + unrestricted access combined</div></div>
+      <div class="score-pill" style="background: rgba(248,113,113,0.15); color: #f87171;">$15-25B TAM</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ DEMAND SIGNALS ═══════════════════════════════════════════ -->
+<section>
+  <h2>Strongest Demand Signals</h2>
+  <h3>Cited evidence from across all source channels</h3>
+  <div style="margin: 24px 0;">
+    <div class="evidence-item">
+      <div class="metric green">13.4M/mo</div>
+      <div class="detail"><strong>Kokoro-82M downloads</strong> on HuggingFace &mdash; Apache 2.0, trained for $1,000, costs &lt;$1/M chars vs ElevenLabs' $180/M chars</div>
+    </div>
+    <div class="evidence-item">
+      <div class="metric green">110M/mo</div>
+      <div class="detail"><strong>JanitorAI visits</strong> growing +11.3% MoM while Character.AI declines -9.87% MoM &mdash; users migrating for fewer restrictions</div>
+    </div>
+    <div class="evidence-item">
+      <div class="metric accent">580 pts</div>
+      <div class="detail"><strong>HN: Anthropic data retention</strong> &mdash; 30-day retention policy driving enterprises toward self-hosted models</div>
+    </div>
+    <div class="evidence-item">
+      <div class="metric accent">100T/mo</div>
+      <div class="detail"><strong>OpenRouter tokens</strong> across 8M users routing around individual provider content restrictions</div>
+    </div>
+    <div class="evidence-item">
+      <div class="metric yellow">$11B</div>
+      <div class="detail"><strong>ElevenLabs valuation</strong> (Series D, Sequoia) despite massive complaints about pricing, censorship, and account terminations</div>
+    </div>
+    <div class="evidence-item">
+      <div class="metric yellow">4.06M/mo</div>
+      <div class="detail"><strong>DeepSeek V4 Pro downloads</strong> &mdash; MIT license, no content filtering, matches frontier quality at 1/17th training cost</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ FINAL RANKING ═══════════════════════════════════════════ -->
+<section>
+  <h2>Ranked Opportunities</h2>
+  <h3>Composite score: demand 30% + feasibility 25% + moat 25% + timing 20%</h3>
+  <div style="display: flex; flex-direction: column; gap: 5px; margin-top: 20px;">
+    <div class="ranking-row" style="border-color: #166534;">
+      <div class="rank green">#1</div>
+      <div class="info"><div class="name">VoxLibre &mdash; Open-Source Voice AI Platform</div><div class="desc">100x cheaper than ElevenLabs, unrestricted, local or cloud</div></div>
+      <div class="score-pill" style="background: rgba(74,222,128,0.2); color: #4ade80;">72</div>
+    </div>
+    <div class="ranking-row" style="border-color: #1e3a5f;">
+      <div class="rank accent">#2</div>
+      <div class="info"><div class="name">AegisAI &mdash; Self-Hosted Enterprise AI</div><div class="desc">Data sovereignty + unrestricted intelligence for regulated industries</div></div>
+      <div class="score-pill" style="background: rgba(110,168,254,0.2); color: #6ea8fe;">68</div>
+    </div>
+    <div class="ranking-row" style="border-color: #1e3a5f;">
+      <div class="rank accent">#3</div>
+      <div class="info"><div class="name">RefusalBench &mdash; AI Restriction Benchmarks</div><div class="desc">Picks &amp; shovels: quantify what every model blocks</div></div>
+      <div class="score-pill" style="background: rgba(110,168,254,0.2); color: #6ea8fe;">62</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank dim">#4</div>
+      <div class="info"><div class="name">Anvil AI &mdash; Enterprise Governance Layer</div><div class="desc">Feature, not company &mdash; better inside AegisAI</div></div>
+      <div class="score-pill" style="background: rgba(107,114,128,0.2); color: #6b7280;">58</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank dim">#5</div>
+      <div class="info"><div class="name">Voicecraft Guild &mdash; AI Audiobooks</div><div class="desc">Real demand, but ACX/Audible AI ban is a distribution killer</div></div>
+      <div class="score-pill" style="background: rgba(107,114,128,0.2); color: #6b7280;">55</div>
+    </div>
+    <div class="ranking-row">
+      <div class="rank red">#6-8</div>
+      <div class="info"><div class="name">CanvasAI / Uncensor.ai / AaaS</div><div class="desc">Don't build &mdash; incumbents exist, regulatory risk, free alternatives</div></div>
+      <div class="score-pill" style="background: rgba(248,113,113,0.15); color: #f87171;">38-48</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ #1 VOXLIBRE ═══════════════════════════════════════════ -->
+<section>
+  <section>
+    <div style="margin-bottom: 10px;"><span class="tag tag-green">RANK #1</span> <span class="tag tag-blue">SCORE 72/100</span></div>
+    <h2>VoxLibre</h2>
+    <h3>Production-grade unrestricted voice AI at 1/100th the cost of ElevenLabs</h3>
+    <div class="stat-grid" style="margin-top: 30px;">
+      <div class="stat-box">
+        <div class="medium-number green">8/10</div>
+        <div class="label">Market Demand</div>
+      </div>
+      <div class="stat-box">
+        <div class="medium-number accent">8/10</div>
+        <div class="label">Feasibility</div>
+      </div>
+      <div class="stat-box">
+        <div class="medium-number yellow">9/10</div>
+        <div class="label">Timing</div>
+      </div>
+    </div>
+    <p style="font-size: 0.55em; color: #4b5563; margin-top: 10px;">&darr; scroll down for details</p>
+  </section>
+
+  <section>
+    <h2>VoxLibre &mdash; The Cost Gap</h2>
+    <div class="versus">
+      <div class="side" style="background: rgba(248,113,113,0.1); border: 1px solid #7f1d1d;">
+        <p class="big-number red">$180</p>
+        <p style="font-size: 0.65em; color: #f87171;">ElevenLabs<br>per million chars</p>
+        <p style="font-size: 0.5em; color: #6b7280; margin-top: 10px;">+ content censorship<br>+ account terminations<br>+ feature removal</p>
+      </div>
+      <div class="vs">VS</div>
+      <div class="side" style="background: rgba(74,222,128,0.1); border: 1px solid #166534;">
+        <p class="big-number green">&lt;$1</p>
+        <p style="font-size: 0.65em; color: #4ade80;">Kokoro / Chatterbox<br>per million chars</p>
+        <p style="font-size: 0.5em; color: #6b7280; margin-top: 10px;">Apache 2.0 / MIT<br>13.4M + 1.67M downloads/mo<br>Trained for $1,000</p>
+      </div>
+    </div>
+    <p style="font-size: 0.65em; color: #94a3b8;">
+      Open-source TTS crossed the quality threshold in 2025-2026. The cost floor has collapsed <span class="green">180x</span>.
+    </p>
+  </section>
+
+  <section>
+    <h2>VoxLibre &mdash; Evidence</h2>
+    <div style="margin: 20px 0;">
+      <div class="evidence-item">
+        <div class="metric green">13.4M/mo</div>
+        <div class="detail"><strong>Kokoro-82M</strong> downloads on HuggingFace &mdash; Apache 2.0, 82M params, 8 languages, trained for only $1,000</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric green">1.67M/mo</div>
+        <div class="detail"><strong>Chatterbox</strong> downloads &mdash; MIT license, 23+ languages, outperforms ElevenLabs in side-by-side evaluations</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric accent">1,003 pts</div>
+        <div class="detail"><strong>KittenTTS on HN</strong> &mdash; built because "cloud alternatives are too expensive for high frequency use"</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric yellow">$11B</div>
+        <div class="detail"><strong>ElevenLabs valuation</strong> proves the market &mdash; while their pricing + terminations prove the vulnerability</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric red">Blocked</div>
+        <div class="detail">ElevenLabs censors the word <strong>"death"</strong> in audiobooks, terminates $399/mo premium accounts without explanation</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric dim">Unserved</div>
+        <div class="detail"><strong>Accessibility:</strong> blind users "still use eloquence and espeak" because commercial TTS has too much latency</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>VoxLibre &mdash; Risks &amp; Mitigations</h2>
+    <div class="card-grid">
+      <div class="card" style="border-color: #7f1d1d;">
+        <h4><span class="red">Killer Risk</span></h4>
+        <p>Coqui AI (45.5K stars) tried open-source TTS business and failed. Resemble AI controls Chatterbox and could compete directly. Thin wrapper over open-source has historically struggled to capture value.</p>
+      </div>
+      <div class="card" style="border-color: #166534;">
+        <h4><span class="green">Mitigation</span></h4>
+        <p>Go vertical, not horizontal. Focus on audiobook production and accessibility devices. Build switching costs through voice cloning data and production tooling, not inference. ElevenLabs-compatible API for zero-friction migration.</p>
+      </div>
+      <div class="card" style="border-color: #854d0e;">
+        <h4><span class="yellow">Critic Scores</span></h4>
+        <p>VC: 5/10 "explore" &mdash; moat concern<br>Tech: 5/10 "explore" &mdash; build is feasible<br>Both acknowledge cost gap and displaced customer base are real.</p>
+      </div>
+      <div class="card" style="border-color: #1e3a5f;">
+        <h4><span class="accent">Market Size</span></h4>
+        <p><strong>$8-15B SAM</strong> within $45-65B voice AI TAM<br><br>Audiobook narration ($2B), developer voice APIs ($3B), accessibility TTS ($1B), voice cloning ($1.5B), creative voice ($2-3B)</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>VoxLibre &mdash; Next Steps</h2>
+    <div class="timeline">
+      <div class="step">
+        <h4>Customer Discovery (Week 1-2)</h4>
+        <p>Talk to 20 audiobook creators currently paying ElevenLabs $200+/month. Validate willingness to switch and price sensitivity.</p>
+      </div>
+      <div class="step">
+        <h4>Build MVP API (Week 3-4)</h4>
+        <p>Kokoro + Chatterbox wrapper with ElevenLabs-compatible endpoints. Zero content restrictions. Docker deployment.</p>
+      </div>
+      <div class="step">
+        <h4>Quality Benchmarking (Week 5-6)</h4>
+        <p>Systematic comparison: prosody, numbers, multilingual. Identify where engineering investment creates differentiation vs. open-source baseline.</p>
+      </div>
+      <div class="step">
+        <h4>Vertical Partnerships (Week 7-8)</h4>
+        <p>Accessibility device companies (highest WTP, lowest competition). Indie audiobook creators via direct-to-reader platforms (Gumroad, Payhip).</p>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ═══════════════════════════════════════════ #2 AEGISAI ═══════════════════════════════════════════ -->
+<section>
+  <section>
+    <div style="margin-bottom: 10px;"><span class="tag tag-blue">RANK #2</span> <span class="tag tag-blue">SCORE 68/100</span></div>
+    <h2>AegisAI</h2>
+    <h3>Self-hosted frontier AI for enterprises &mdash; zero retention, zero censorship, zero compliance risk</h3>
+    <div class="stat-grid" style="margin-top: 30px;">
+      <div class="stat-box">
+        <div class="medium-number green">8/10</div>
+        <div class="label">Market Demand</div>
+      </div>
+      <div class="stat-box">
+        <div class="medium-number accent">7/10</div>
+        <div class="label">Feasibility</div>
+      </div>
+      <div class="stat-box">
+        <div class="medium-number yellow">8/10</div>
+        <div class="label">Timing</div>
+      </div>
+    </div>
+    <p style="font-size: 0.55em; color: #4b5563;">&darr; scroll down for details</p>
+  </section>
+
+  <section>
+    <h2>AegisAI &mdash; Enterprise Pain is Validated</h2>
+    <div style="margin: 24px 0;">
+      <div class="evidence-item">
+        <div class="metric red">580 pts</div>
+        <div class="detail"><strong>Anthropic 30-day data retention</strong> &mdash; 293 comments, enterprises cannot accept third-party data retention</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric red">563 pts</div>
+        <div class="detail"><strong>Anthropic Fable blocks cybersecurity</strong> &mdash; "rejects any request that could be tangentially cyber related"</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric red">411 pts</div>
+        <div class="detail"><strong>AWS Bedrock data sharing</strong> &mdash; requirement driving enterprises toward self-hosted models</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric green">82.6K</div>
+        <div class="detail"><strong>vLLM GitHub stars</strong> &mdash; self-hosted inference exploding but requires deep MLOps expertise</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric green">$240M</div>
+        <div class="detail"><strong>Cohere ARR</strong> (from $22M) targeting the enterprise AI sovereignty gap &mdash; market is paying</div>
+      </div>
+      <div class="evidence-item">
+        <div class="metric accent">$95B</div>
+        <div class="detail"><strong>Cerebras IPO</strong> (May 2026) &mdash; inference infrastructure demand validated at massive scale</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>AegisAI &mdash; Strategy</h2>
+    <div class="card-grid">
+      <div class="card" style="border-color: #166534;">
+        <h4><span class="green">Beachhead: Cybersecurity</span></h4>
+        <p>Security researchers cannot use frontier providers. Highest willingness to pay. Well-defined use cases (pentesting, exploit analysis, vuln review). Start with 3 design partners.</p>
+      </div>
+      <div class="card" style="border-color: #1e3a5f;">
+        <h4><span class="accent">Moat: Compliance</span></h4>
+        <p>SOC 2 Type II + FedRAMP certification creates 12-18 month barrier. Company Brain RAG pipeline creates high switching costs as it indexes institutional knowledge.</p>
+      </div>
+      <div class="card" style="border-color: #7f1d1d;">
+        <h4><span class="red">Killer Risk</span></h4>
+        <p>Squeezed between free tools (Ollama 174K stars, vLLM) and well-funded platforms (NVIDIA NIM, Databricks). "Zero censorship" branding repels enterprise legal.</p>
+      </div>
+      <div class="card" style="border-color: #854d0e;">
+        <h4><span class="yellow">Key Positioning</span></h4>
+        <p>NEVER say "uncensored." Say <strong>"enterprise-controlled AI"</strong> or <strong>"sovereign AI."</strong> Let CISOs set their own policies. Market the control, not the absence of restrictions.</p>
+      </div>
+    </div>
+    <p style="font-size: 0.6em; margin-top: 16px;"><strong>Market:</strong> $15-30B SAM within $120-180B enterprise AI TAM</p>
+  </section>
+</section>
+
+<!-- ═══════════════════════════════════════════ #3 REFUSALBENCH ═══════════════════════════════════════════ -->
+<section>
+  <div style="margin-bottom: 10px;"><span class="tag tag-blue">RANK #3</span> <span class="tag tag-blue">SCORE 62/100</span> <span class="tag tag-green">BEST "START TONIGHT" OPTION</span></div>
+  <h2>RefusalBench</h2>
+  <h3>The credit rating agency for AI model censorship</h3>
+
+  <div class="card-grid" style="margin-top: 24px;">
+    <div class="card" style="border-color: #166534;">
+      <h4><span class="green">Why It Works</span></h4>
+      <p>Picks &amp; shovels play. No existing tool treats restriction behavior as a queryable dimension. 2-person team, 3-month MVP. Revenue scales with model proliferation. Serves the ecosystem instead of competing in it.</p>
+    </div>
+    <div class="card" style="border-color: #1e3a5f;">
+      <h4><span class="accent">Distribution</span></h4>
+      <p>Partner with OpenRouter (8M users, 100T tokens/mo) to integrate restriction metadata. Sell to enterprise procurement teams ($5K-25K/yr). Model providers who want transparency become allies.</p>
+    </div>
+    <div class="card" style="border-color: #7f1d1d;">
+      <h4><span class="red">Risk</span></h4>
+      <p>Platform risk: model providers can block probing accounts. No regulatory mandate (unlike credit ratings). Gray Swan AI or Artificial Analysis could add this as a feature.</p>
+    </div>
+    <div class="card" style="border-color: #854d0e;">
+      <h4><span class="yellow">Feasibility: 9/10</span></h4>
+      <p>Cheapest to build of all concepts. Automated probing pipeline + structured output database + web dashboard + API. Academic predecessors exist (SORRY-Bench, ICLR 2025).</p>
+    </div>
+  </div>
+  <p style="font-size: 0.6em; margin-top: 16px;"><strong>Market:</strong> $2-5B (enterprise AI procurement infrastructure)</p>
+</section>
+
+<!-- ═══════════════════════════════════════════ WHAT NOT TO BUILD ═══════════════════════════════════════════ -->
+<section>
+  <h2><span class="red">What NOT to Build</span></h2>
+  <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+    <div class="card" style="border-color: #7f1d1d;">
+      <h4><span class="red">Consumer "Uncensored" Chat Platforms</span> <span class="tag tag-red">PASS</span></h4>
+      <p>Venice.ai already at 12.1M visits/month growing 22.7% MoM. xAI/Grok at $120B+ valuation &mdash; this is a big-company game now. Character.AI wrongful death lawsuits preview the legal exposure. The $25-40B SAM is fantasy math (conflates free roleplay visits with paying subscribers).</p>
+    </div>
+    <div class="card" style="border-color: #7f1d1d;">
+      <h4><span class="red">Unrestricted Image Generation</span> <span class="tag tag-red">PASS</span></h4>
+      <p>CivitAI (a16z-backed) is vertically integrating. FLUX.1-dev is non-commercial (Section 2.b). Payment processor risk is existential for adult content. Crowded: BasedLabs, Mage.space, RunDiffusion, SeaArt all exist.</p>
+    </div>
+    <div class="card" style="border-color: #7f1d1d;">
+      <h4><span class="red">Abliteration-as-a-Service</span> <span class="tag tag-red">PASS</span></h4>
+      <p>Heretic (24K GitHub stars) delivers this for free via a single pip command. 3,500+ variants with 13M downloads. The community expects free models. No validated willingness to pay. Realistic market is $5-20M, not $1-3B.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ MACRO SIGNALS ═══════════════════════════════════════════ -->
+<section>
+  <h2>Key Macro Signals</h2>
+  <table class="macro">
+    <thead>
+      <tr><th>Signal</th><th>Evidence</th><th>Implication</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Open-source TTS quality inflection</strong></td>
+        <td>Kokoro 13.4M downloads/mo, Chatterbox 1.67M, trained for $1K</td>
+        <td class="green">Voice AI about to be commoditized &mdash; build on top, not at the model layer</td>
+      </tr>
+      <tr>
+        <td><strong>Enterprise leaving cloud AI</strong></td>
+        <td>Anthropic retention (580 HN pts), AWS data sharing (411 pts)</td>
+        <td class="green">Self-hosted inference demand is structural, not cyclical</td>
+      </tr>
+      <tr>
+        <td><strong>Unrestricted model demand is massive</strong></td>
+        <td>11,373 HF variants, JanitorAI 110M visits, OpenRouter 100T tokens/mo</td>
+        <td class="yellow">Demand is real but monetization is hard &mdash; most users expect free</td>
+      </tr>
+      <tr>
+        <td><strong>Model quality gap narrowing</strong></td>
+        <td>DeepSeek V4 Pro (MIT, 4.06M downloads) matches frontier quality</td>
+        <td class="green">Quality penalty for open-weight / self-hosted is gone</td>
+      </tr>
+      <tr>
+        <td><strong>Regulatory tightening</strong></td>
+        <td>EU AI Act, TAKE IT DOWN Act, Character.AI lawsuits</td>
+        <td class="red">"Uncensored" branding is a liability &mdash; position as "enterprise-controlled"</td>
+      </tr>
+      <tr>
+        <td><strong>YC prioritizing agents</strong></td>
+        <td>Multiple RFS categories for agent-native software</td>
+        <td class="accent">Build for agents as first-class citizens, not human UIs</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════════════════════ STRATEGIC REC ═══════════════════════════════════════════ -->
+<section>
+  <h2>Strategic Recommendation</h2>
+  <div style="max-width: 700px; margin: 0 auto; text-align: left;">
+    <div class="card" style="border-color: #166534; margin-bottom: 20px;">
+      <h4 style="font-size: 0.9em;"><span class="green">Primary:</span> VoxLibre</h4>
+      <p style="font-size: 0.6em; color: #e0e0e8; line-height: 1.6;">
+        Voice AI platform with beachhead in <strong>audiobook production</strong> and <strong>accessibility devices</strong>.
+        Combines the largest validated cost gap (100x), a displaced customer base, a quality inflection point,
+        clear vertical moats, and lower regulatory risk than text/image plays.
+      </p>
+    </div>
+    <div class="card" style="border-color: #1e3a5f; margin-bottom: 20px;">
+      <h4 style="font-size: 0.9em;"><span class="accent">Alternative:</span> AegisAI</h4>
+      <p style="font-size: 0.6em; color: #e0e0e8; line-height: 1.6;">
+        If you have enterprise sales experience. Target <strong>cybersecurity firms</strong> as design partners.
+        Requires SOC 2 certification and 12-18 month go-to-market timeline.
+        Position as "sovereign AI," never "uncensored."
+      </p>
+    </div>
+    <div class="card" style="border-color: #854d0e;">
+      <h4 style="font-size: 0.9em;"><span class="yellow">Cheapest Start:</span> RefusalBench</h4>
+      <p style="font-size: 0.6em; color: #e0e0e8; line-height: 1.6;">
+        Build in 3 months with 2 people. Genuine infrastructure gap. Validates whether the ecosystem
+        will pay for restriction intelligence. Best side project that could become a company.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ CLOSING ═══════════════════════════════════════════ -->
+<section>
+  <h1>The Market is Real.</h1>
+  <h1>The Window is <span class="green">Now</span>.</h1>
+  <p style="font-size: 0.7em; margin-top: 40px; color: #94a3b8;">
+    Build infrastructure and vertical tools.<br>
+    Let "unrestricted" be a feature, not the brand.
+  </p>
+  <p style="font-size: 0.45em; color: #4b5563; margin-top: 60px;">
+    Research: 27 agents &middot; 938 tool calls &middot; 6 source channels &middot; 91 pain points &middot; 7 clusters &middot; 8 concepts &middot; 16 critiques
+  </p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  center: true,
+  transition: 'fade',
+  transitionSpeed: 'fast',
+  width: 1200,
+  height: 700,
+  margin: 0.06,
+  controlsTutorial: false,
+});
+</script>
+</body>
+</html>
